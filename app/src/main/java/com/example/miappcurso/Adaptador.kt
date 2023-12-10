@@ -1,3 +1,4 @@
+/*
 package com.example.miappcurso
 
 import android.view.LayoutInflater
@@ -53,3 +54,4 @@ class Adaptador : RecyclerView.Adapter<Adaptador.ViewHolder>(){
 
     }
 }
+ */
