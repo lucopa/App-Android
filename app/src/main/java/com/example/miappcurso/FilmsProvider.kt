@@ -18,6 +18,26 @@ class FilmsProvider {
                     "Pitch Perfect",
                     "Musical y Comedia",
                     "https://pics.filmaffinity.com/pitch_perfect-419842614-mmed.jpg"
+                ),
+                Films(
+                        "Gone Girl",
+                "Thriller y Suspense",
+                "https://es.web.img3.acsta.net/c_310_420/pictures/14/09/08/15/34/309537.jpg"
+                ),
+                Films(
+                    "Gorrión Rojo",
+                    "Acción y Drama",
+                    "https://es.web.img3.acsta.net/c_310_420/pictures/18/01/18/10/47/2319558.jpg"
+                ),
+                Films(
+                    "Barbie",
+                    "Comedia y Fantasía",
+                    "https://pics.filmaffinity.com/barbie-295661697-mmed.jpg"
+                ),
+                Films(
+                    "Oppenheimer",
+                    "Biopic y Suspense",
+                    "https://pics.filmaffinity.com/oppenheimer-828933592-mmed.jpg"
                 )
             )
         }

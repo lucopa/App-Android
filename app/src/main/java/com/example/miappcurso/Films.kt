@@ -1,3 +1,3 @@
 package com.example.miappcurso
 
-data class Films(val film: String, val genero: String, val photo: String)
+data class Films(var film: String, var genero: String, val photo: String)
