@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de la película"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Género de la película"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editPhotoUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL de la foto de la película"
+        android:minHeight="48dp" />
+
+</LinearLayout>
