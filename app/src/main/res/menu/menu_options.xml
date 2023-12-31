@@ -2,10 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/option_one"
-        android:title="Detalles">
+        android:title="Recomendaciones">
     </item>
     <item
         android:id="@+id/option_two"
         android:title="Login">
+    </item>
+    <item
+        android:id="@+id/option_three"
+        android:title="Lista de Peliculas">
     </item>
 </menu>

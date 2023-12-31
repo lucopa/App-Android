@@ -1,6 +1,7 @@
 package com.example.miappcurso
 
 
+import DetailFragment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,14 +29,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.option_one)
-            Toast.makeText(this, "Detalle Películas", Toast.LENGTH_SHORT).show()
-        if (item.itemId == R.id.option_two)
-            startActivity(Intent(this, LoginActivity::class.java))
-        Toast.makeText(this, "Volviste al Login", Toast.LENGTH_SHORT).show()
+        when (item.itemId) {
+            R.id.option_one -> {
+                val fragment = DetailFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit()
+                Toast.makeText(this, "Recomendaciones de Películas", Toast.LENGTH_SHORT).show()
+
+                return true
+            }
+            R.id.option_two -> {
+                startActivity(Intent(this, LoginActivity::class.java))
+                Toast.makeText(this, "Volviste al Login", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.option_three -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                Toast.makeText(this, "Volviste a la Lista de Películas", Toast.LENGTH_SHORT).show()
+                return true
+            }
 
 
+        }
         return super.onOptionsItemSelected(item)
     }
+
 
 }
