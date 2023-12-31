@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        MyToolBar().show(this, "LISTA DE PELÍCULAS", true )
+        MyToolBar().show(this, "PELÍCULAS", true )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -40,14 +40,24 @@ class MainActivity : AppCompatActivity() {
 
                 return true
             }
-            R.id.option_two -> {
+            R.id.option_three -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                Toast.makeText(this, "Volviste a la Lista de Películas", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.option_four-> {
                 startActivity(Intent(this, LoginActivity::class.java))
                 Toast.makeText(this, "Volviste al Login", Toast.LENGTH_SHORT).show()
                 return true
             }
-            R.id.option_three -> {
-                startActivity(Intent(this, MainActivity::class.java))
-                Toast.makeText(this, "Volviste a la Lista de Películas", Toast.LENGTH_SHORT).show()
+            R.id.option_five -> {
+                val fragment = RewardFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit()
+                Toast.makeText(this, "Premios del Cine", Toast.LENGTH_SHORT).show()
+
                 return true
             }
 

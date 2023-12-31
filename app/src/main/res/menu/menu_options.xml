@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/option_one"
-        android:title="Recomendaciones">
-    </item>
-    <item
-        android:id="@+id/option_two"
-        android:title="Login">
+        android:icon="@drawable/video"
+        android:title="Recomendaciones"
+        >
     </item>
     <item
         android:id="@+id/option_three"
+        android:icon="@drawable/volver"
+        android:title="Lista de Peliculas"
+        app:showAsAction="ifRoom">
+    </item>
+    <item
+        android:id="@+id/option_four"
+        android:icon="@drawable/hogar"
+        app:showAsAction="ifRoom"
         android:title="Lista de Peliculas">
+    </item>
+    <item
+        android:id="@+id/option_five"
+        android:title="Premios del Cine">
     </item>
 </menu>
