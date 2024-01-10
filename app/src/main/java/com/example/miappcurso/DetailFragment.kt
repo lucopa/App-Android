@@ -9,6 +9,7 @@ import com.example.miappcurso.databinding.FragmentDetailBinding
 class DetailFragment : Fragment() {
 
 
+
     private lateinit var binding: FragmentDetailBinding
 
 
@@ -21,7 +22,6 @@ class DetailFragment : Fragment() {
     }
 
 }
-
 
 
 
