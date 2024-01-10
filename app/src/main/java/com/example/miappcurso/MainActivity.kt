@@ -14,6 +14,7 @@ import com.example.miappcurso.toolBar.MyToolBar
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         MyToolBar().show(this, "PELÍCULAS", true )
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, DetailFragment())
+            .commit()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -29,20 +36,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed() // Simular presionar el botón de retroceso del dispositivo
+                return true
+            }
             R.id.option_one -> {
-                val fragment = DetailFragment()
+                val fragment = FragmentRecycler()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, fragment)
                     .addToBackStack(null)
                     .commit()
-                Toast.makeText(this, "Recomendaciones de Películas", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Lista de Peliculas", Toast.LENGTH_SHORT).show()
 
-                return true
-            }
-            R.id.option_three -> {
-                startActivity(Intent(this, MainActivity::class.java))
-                Toast.makeText(this, "Volviste a la Lista de Películas", Toast.LENGTH_SHORT).show()
                 return true
             }
             R.id.option_four-> {
@@ -60,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
                 return true
             }
+
 
 
         }

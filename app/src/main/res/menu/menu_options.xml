@@ -4,14 +4,8 @@
     <item
         android:id="@+id/option_one"
         android:icon="@drawable/video"
-        android:title="Recomendaciones"
+        android:title="Lista de Peliculas (Recycler)"
         >
-    </item>
-    <item
-        android:id="@+id/option_three"
-        android:icon="@drawable/volver"
-        android:title="Lista de Peliculas"
-        app:showAsAction="ifRoom">
     </item>
     <item
         android:id="@+id/option_four"

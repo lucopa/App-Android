@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentRecycler">
+
+    <fragment
+        android:id="@+id/fragmentRecycler"
+        android:name="com.example.miappcurso.FragmentRecycler"
+        android:label="fragment_recycler"
+        tools:layout="@layout/fragment_recycler" >
+        <action
+            android:id="@+id/action_fragmentRecycler_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_fragmentRecycler_to_rewardFragment"
+            app:destination="@id/rewardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rewardFragment"
+        android:name="com.example.miappcurso.RewardFragment"
+        android:label="RewardFragment" >
+        <argument android:name="itemID" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="itemID"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
