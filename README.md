@@ -24,10 +24,10 @@ Añadiremos nuestras propias clases POJO y Adaptadores.
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/Login.png?raw=true)
 
-3. **activity_main.xml**: Diseño de la interfaz de usuario principal que muestra la lista de películas.
+2. **activity_main.xml**: Diseño de la interfaz de usuario principal que muestra la lista de películas.
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/recyclerview.png?raw=true)
-4. **cardview_film.xml**: Diseño de un elemento de la lista de películas utilizando CardView.
+3. **cardview_film.xml**: Diseño de un elemento de la lista de películas utilizando CardView.
 
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/cardview1.png?raw=true)
 
@@ -104,11 +104,13 @@ Contiene los mismos archivos xml que en la versión 1.1 pero con algunos cambios
 1. **activity_login.xml**: el diseño sigue exactamente igual.
 
 2. **activity_main.xml**: Se han añadido nuevas películas y si deslizas hacia abajo se podrán ver. Hay un nuevo boton **Añadir Pelicula Nueva** que permite añadir películas nuevas en la que aparecerá un dialog y tendrás que rellenar los campos de título, género e imagen para poder crear una nueva. También hay unos nuevos botones en el cardview que explicaré en su apartado.
+   
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/crudcompleto.png?raw=true)
+
 El dialog es así:
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/add_film.png?raw=true)
 
-3. **cardview_film.xml**: Se ha añadido el image Button de un lápiz en el que si pulsas en el te aparecerá un dialog que te permitirá editar la película:
+4. **cardview_film.xml**: Se ha añadido el image Button de un lápiz en el que si pulsas en el te aparecerá un dialog que te permitirá editar la película:
 
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/edit_film.png?raw=true)
