@@ -27,6 +27,7 @@ Añadiremos nuestras propias clases POJO y Adaptadores.
 2. **activity_main.xml**: Diseño de la interfaz de usuario principal que muestra la lista de películas.
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/recyclerview.png?raw=true)
+
 3. **cardview_film.xml**: Diseño de un elemento de la lista de películas utilizando CardView.
 
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/cardview1.png?raw=true)
@@ -111,7 +112,7 @@ El dialog es así:
 
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/add_film.png?raw=true)
 
-4. **cardview_film.xml**: Se ha añadido el image Button de un lápiz en el que si pulsas en el te aparecerá un dialog que te permitirá editar la película:
+3. **cardview_film.xml**: Se ha añadido el image Button de un lápiz en el que si pulsas en el te aparecerá un dialog que te permitirá editar la película:
 
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/edit_film.png?raw=true)
