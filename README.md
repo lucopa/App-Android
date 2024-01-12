@@ -108,6 +108,7 @@ Contiene los mismos archivos xml que en la versión 1.1 pero con algunos cambios
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/crudcompleto.png?raw=true)
 
 El dialog es así:
+
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/add_film.png?raw=true)
 
 4. **cardview_film.xml**: Se ha añadido el image Button de un lápiz en el que si pulsas en el te aparecerá un dialog que te permitirá editar la película:
