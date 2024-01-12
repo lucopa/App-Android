@@ -25,8 +25,10 @@ Añadiremos nuestras propias clases POJO y Adaptadores.
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/Login.png?raw=true)
 
 3. **activity_main.xml**: Diseño de la interfaz de usuario principal que muestra la lista de películas.
+   
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/recyclerview.png?raw=true)
 4. **cardview_film.xml**: Diseño de un elemento de la lista de películas utilizando CardView.
+
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/cardview1.png?raw=true)
 
 ## VERSIÓN 1.2
