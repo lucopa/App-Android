@@ -1,4 +1,6 @@
-package com.example.miappcurso
+package com.example.miappcurso.adapter
+
+import com.example.miappcurso.adapter.Films
 
 class FilmsProvider {
         companion object{

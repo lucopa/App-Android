@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentRecycler"
-        android:name="com.example.miappcurso.FragmentRecycler"
+        android:name="com.example.miappcurso.fragments.FragmentRecycler"
         android:label="fragment_recycler"
         tools:layout="@layout/fragment_recycler" >
         <action
@@ -19,13 +19,16 @@
     </fragment>
     <fragment
         android:id="@+id/rewardFragment"
-        android:name="com.example.miappcurso.RewardFragment"
+        android:name="com.example.miappcurso.fragments.RewardFragment"
         android:label="RewardFragment" >
-        <argument android:name="itemID" />
+
+        <argument
+            android:name="itemID"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="DetailFragment"
+        android:name="com.example.miappcurso.fragments.DetailFragment"
         android:label="DetailFragment" >
         <argument
             android:name="itemID"

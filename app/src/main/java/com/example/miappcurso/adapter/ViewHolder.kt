@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.miappcurso.Films
 import com.example.miappcurso.databinding.CardLayoutBinding
 
 class ViewHolder(view:View):RecyclerView.ViewHolder(view) {

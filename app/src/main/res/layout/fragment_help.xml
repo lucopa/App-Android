@@ -1,0 +1,61 @@
+<!-- res/layout/fragment_help.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragmentsBYN.HelpFragment"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ayuda"
+    android:scaleType="centerInside"
+    android:adjustViewBounds="true"
+    android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ayuda"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido al Centro de Ayuda. Aquí encontrarás información útil para utilizar la aplicación."
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/sectionTitle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preguntas Frecuentes"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/faq1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. ¿Cómo puedo cambiar mi contraseña?"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/faq2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. ¿Qué hacer si olvidé mi nombre de usuario?"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

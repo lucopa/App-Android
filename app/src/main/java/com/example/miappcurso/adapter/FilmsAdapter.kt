@@ -3,7 +3,6 @@ package com.example.miappcurso.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.miappcurso.Films
 import com.example.miappcurso.R
 
 class FilmsAdapter(
