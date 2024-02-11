@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val username = prefs.getName()
         val correo = prefs.getCorreo()
-        bindingnav.idusuario.text = "!Bienvenido $username¡"
+        bindingnav.idusuario.text = "! Bienvenido $username ¡"
         bindingnav.idCorreo.text = "Correo: $correo"
     }
 
