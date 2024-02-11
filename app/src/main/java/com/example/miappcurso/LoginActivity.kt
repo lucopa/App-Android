@@ -37,19 +37,34 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun accessDetail() {
-        if(binding.editTextText.text.toString().isNotEmpty()){
-            prefs.saveName(binding.editTextText.text.toString())
-            prefs.saveTERMS(binding.checkBoxVip.isChecked)
-            goToDetail()
-        }
-        else{
-
+        if (binding.editTextText.text.toString().isNotEmpty() && binding.editTextCorreo.text.toString().isNotEmpty()) {
+            if (binding.checkBoxVip.isChecked) {
+                prefs.saveName(binding.editTextText.text.toString())
+                prefs.saveCorreo(binding.editTextCorreo.text.toString()) // Guardar correo electrónico
+                prefs.saveTERMS(binding.checkBoxVip.isChecked)
+                goToDetail()
+            } else {
+                Toast.makeText(
+                    this,
+                    "Debes aceptar los términos y condiciones para iniciar sesión",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } else {
+            Toast.makeText(
+                this,
+                "Por favor ingresa un nombre de usuario y correo electrónico",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
+
 
     fun goToDetail(){
         startActivity(Intent(this,MainActivity::class.java))
     }
+
+
 
 
 }

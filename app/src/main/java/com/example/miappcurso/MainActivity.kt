@@ -106,9 +106,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Toast.makeText(this, "Vas a Cerrar Sesión", Toast.LENGTH_SHORT).show()
 
         }
-        val username = prefs.getName()
 
-        bindingnav.idusuario.text = "Bienvenido $username"
+        val username = prefs.getName()
+        val correo = prefs.getCorreo()
+        bindingnav.idusuario.text = "!Bienvenido $username¡"
+        bindingnav.idCorreo.text = "Correo: $correo"
     }
 
 
