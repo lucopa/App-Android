@@ -4,6 +4,10 @@ Este proyecto es una aplicación  de gestión de películas que voy a ir desarro
 ## ÍNDICE
 ### 1. VERSIÓN 1.1
 ### 2. VERSION 1.2
+### 3. VERSION 1.3
+### 4. VERSION 1.4
+
+
 
 
 
@@ -100,7 +104,7 @@ Dar de alta:
         dialog.show()
     }
 ```
-# Archivos XML:
+## Archivos XML:
 Contiene los mismos archivos xml que en la versión 1.1 pero con algunos cambios:
 1. **activity_login.xml**: el diseño sigue exactamente igual.
 
@@ -117,3 +121,134 @@ El dialog es así:
    
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/edit_film.png?raw=true)
 ![Ejemplo de imagen](https://github.com/lucopa/EjerciciosJavaScript/blob/main/pantallazos/cardview.png?raw=true)
+
+
+## 3. VERSION 1.3
+A esta versión, añadiremos un Navigation Drawer o Navigation Bottom.
+
+## Estructura del Proyecto:
+Dentro del main_activity, donde añadimos sus respectivomos métodos:
+```kotlin
+    - Navigation Drawer
+
+    binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        binding.navigationDrawer.setNavigationItemSelectedListener(this)
+
+        binding.bottomNavigation.background = null
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.bottom_home->{
+                    openFragment(DetailFragment())
+                    Toast.makeText(this, "Recomendaciones de Peliculas", Toast.LENGTH_SHORT).show()
+                }
+                R.id.bottom_profile->{
+                    openFragment(ProfileFragment())
+                    Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+
+                }
+                R.id.bottom_cart->{
+                    openFragment(FragmentRecycler())
+                    Toast.makeText(this, "Lista de Peliculas", Toast.LENGTH_SHORT).show()
+
+                }
+                R.id.bottom_menu-> {
+                    openFragment(RewardFragment())
+                    Toast.makeText(this, "Premios del Cine", Toast.LENGTH_SHORT).show()
+                }
+            }
+            true
+        }
+
+```
+
+```kotlin
+    - Navigation Bottom
+    
+override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.nav_prime -> {
+                openFragment(RewardFragment())
+                Toast.makeText(this, "Premios del Cine", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_electronics-> {
+                Toast.makeText(this, "Lista de Peliculas", Toast.LENGTH_SHORT).show()
+                openFragment(FragmentRecycler())}
+            R.id.nav_location-> {
+                openFragment(DetailFragment())
+                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()}
+            R.id.nav_help->{
+                openFragment(HelpFragment())
+                Toast.makeText(this, "Ayuda", Toast.LENGTH_SHORT).show()}
+        }
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+```
+
+
+
+## Archivos XML:
+Los nuevos archivos creados han sido:
+
+1. Una carpeta llamada menú, en el que dentro de ella hay:
+   
+    ```xml
+    - **bottom_menu.xml**:
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item
+        android:id="@+id/bottom_profile"
+        android:title="Perfil"
+        android:icon="@drawable/baseline_subscriptions_24"/>
+    <item
+        android:title=""
+        android:enabled="true"/>
+    <item
+        android:id="@+id/bottom_cart"
+        android:title="Peliculas"
+        android:icon="@drawable/baseline_info_24"/>
+    <item
+        android:id="@+id/bottom_menu"
+        android:title="Premios"
+        android:icon="@drawable/baseline_auto_awesome_24"/>
+
+    </menu>
+    ```
+       
+    ```xml
+    - **nav_menu.xml**:
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_prime"
+            android:icon="@drawable/baseline_admin_panel_settings_24"
+            android:title="Premios Del cine"/>
+        <item
+            android:id="@+id/nav_electronics"
+            android:title="Peliculas"
+            android:icon="@drawable/baseline_library_24"/>
+        <item
+            android:id="@+id/nav_location"
+            android:title="Inicio"
+            android:icon="@drawable/baseline_home_24"/>
+        <item
+            android:id="@+id/nav_help"
+            android:title="Ayuda"
+            android:icon="@drawable/baseline_help_24"/>
+    </group>
+
+    </menu>
+    ```
