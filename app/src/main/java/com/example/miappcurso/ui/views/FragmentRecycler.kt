@@ -1,4 +1,4 @@
-package com.example.miappcurso.fragments
+package com.example.miappcurso.ui.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.miappcurso.adapter.Films
-import com.example.miappcurso.adapter.FilmsProvider
-import com.example.miappcurso.adapter.FilmsAdapter
 import com.example.miappcurso.databinding.AddFilmDialogBinding
 import com.example.miappcurso.databinding.EditFilmDialogBinding
 import com.example.miappcurso.databinding.FragmentRecyclerBinding
+import com.example.miappcurso.data.models.Films
+import com.example.miappcurso.ui.adapter.FilmsProvider
+import com.example.miappcurso.ui.adapter.FilmsAdapter
 
 class FragmentRecycler : Fragment() {
 

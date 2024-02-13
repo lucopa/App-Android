@@ -1,4 +1,4 @@
-package com.example.miappcurso.SharedPreferences
+package com.example.miappcurso.domain.SharedPreferences
 
 import android.content.Context
 

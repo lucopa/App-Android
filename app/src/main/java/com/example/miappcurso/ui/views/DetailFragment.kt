@@ -1,4 +1,4 @@
-package com.example.miappcurso.fragments
+package com.example.miappcurso.ui.views
 
 import android.os.Bundle
 import android.view.LayoutInflater

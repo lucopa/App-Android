@@ -8,18 +8,18 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:name=".SharedPreferences.UserTermsAplication"
+        android:name=".domain.SharedPreferences.UserTermsAplication"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiAppCurso"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.views.MainActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".ui.views.MainActivity"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.views.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

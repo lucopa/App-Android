@@ -1,6 +1,6 @@
-package com.example.miappcurso.adapter
+package com.example.miappcurso.ui.adapter
 
-import com.example.miappcurso.adapter.Films
+import com.example.miappcurso.data.models.Films
 
 class FilmsProvider {
         companion object{
@@ -42,5 +42,9 @@ class FilmsProvider {
                     "https://pics.filmaffinity.com/oppenheimer-828933592-mmed.jpg"
                 )
             )
+
+            fun getFilms(): List<Films> {
+                return filmsList
+            }
         }
     }

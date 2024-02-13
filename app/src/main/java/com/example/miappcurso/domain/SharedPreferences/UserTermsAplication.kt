@@ -1,11 +1,11 @@
-package com.example.miappcurso.SharedPreferences
+package com.example.miappcurso.domain.SharedPreferences
 
 import android.app.Application
 
 class UserTermsAplication : Application()  {
 
     companion object{
-        lateinit var prefs:Prefs
+        lateinit var prefs: Prefs
     }
 
     override fun onCreate() {

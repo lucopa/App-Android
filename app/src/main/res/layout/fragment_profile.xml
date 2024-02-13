@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragmentsBYN.ProfileFragment">
+    tools:context=".ui.views.fragmentsBYN.ProfileFragment">
 
     <ImageView
         android:id="@+id/profileImage"

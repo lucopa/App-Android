@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2DFDB"
-    tools:context=".fragments.FragmentRecycler">
+    tools:context=".ui.views.FragmentRecycler">
 
 
     <androidx.recyclerview.widget.RecyclerView

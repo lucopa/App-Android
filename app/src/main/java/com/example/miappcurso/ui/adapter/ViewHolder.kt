@@ -1,10 +1,11 @@
-package com.example.miappcurso.adapter
+package com.example.miappcurso.ui.adapter
 
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.miappcurso.databinding.CardLayoutBinding
+import com.example.miappcurso.data.models.Films
 
 class ViewHolder(view:View):RecyclerView.ViewHolder(view) {
 

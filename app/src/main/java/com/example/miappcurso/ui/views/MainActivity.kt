@@ -1,14 +1,9 @@
-package com.example.miappcurso
+package com.example.miappcurso.ui.views
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,16 +11,13 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.example.miappcurso.SharedPreferences.UserTermsAplication.Companion.prefs
+import com.example.miappcurso.R
+import com.example.miappcurso.domain.SharedPreferences.UserTermsAplication.Companion.prefs
 import com.example.miappcurso.databinding.ActivityMainBinding
 import com.example.miappcurso.databinding.NavHeaderBinding
-import com.example.miappcurso.fragments.DetailFragment
-import com.example.miappcurso.fragments.FragmentRecycler
-import com.example.miappcurso.fragments.RewardFragment
-import com.example.miappcurso.fragmentsBYN.ActorFragment
-import com.example.miappcurso.fragmentsBYN.HelpFragment
-import com.example.miappcurso.fragmentsBYN.ProfileFragment
-import com.example.miappcurso.toolBar.MyToolBar
+import com.example.miappcurso.ui.views.fragmentsBYN.HelpFragment
+import com.example.miappcurso.ui.views.fragmentsBYN.ProfileFragment
+import com.example.miappcurso.ui.views.toolBar.MyToolBar
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -71,21 +63,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.bottomNavigation.background = null
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when(item.itemId){
-                R.id.bottom_home->{
+                R.id.bottom_home ->{
                     openFragment(DetailFragment())
                     Toast.makeText(this, "Recomendaciones de Peliculas", Toast.LENGTH_SHORT).show()
                 }
-                R.id.bottom_profile->{
+                R.id.bottom_profile ->{
                     openFragment(ProfileFragment())
                     Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
 
                 }
-                R.id.bottom_cart->{
+                R.id.bottom_cart ->{
                     openFragment(FragmentRecycler())
                     Toast.makeText(this, "Lista de Peliculas", Toast.LENGTH_SHORT).show()
 
                 }
-                R.id.bottom_menu-> {
+                R.id.bottom_menu -> {
                     openFragment(RewardFragment())
                     Toast.makeText(this, "Premios del Cine", Toast.LENGTH_SHORT).show()
                 }
@@ -138,7 +130,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 return true
             }
-            R.id.option_four-> {
+            R.id.option_four -> {
                 startActivity(Intent(this, LoginActivity::class.java))
                 Toast.makeText(this, "Volviste al Login", Toast.LENGTH_SHORT).show()
                 return true
@@ -166,13 +158,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 openFragment(RewardFragment())
                 Toast.makeText(this, "Premios del Cine", Toast.LENGTH_SHORT).show()
             }
-            R.id.nav_electronics-> {
+            R.id.nav_electronics -> {
                 Toast.makeText(this, "Lista de Peliculas", Toast.LENGTH_SHORT).show()
                 openFragment(FragmentRecycler())}
-            R.id.nav_location-> {
+            R.id.nav_location -> {
                 openFragment(DetailFragment())
                 Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()}
-            R.id.nav_help->{
+            R.id.nav_help ->{
                 openFragment(HelpFragment())
                 Toast.makeText(this, "Ayuda", Toast.LENGTH_SHORT).show()}
         }

@@ -1,14 +1,10 @@
-package com.example.miappcurso
+package com.example.miappcurso.ui.views
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.miappcurso.SharedPreferences.UserTermsAplication.Companion.prefs
+import com.example.miappcurso.domain.SharedPreferences.UserTermsAplication.Companion.prefs
 import com.example.miappcurso.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -61,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     fun goToDetail(){
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
 

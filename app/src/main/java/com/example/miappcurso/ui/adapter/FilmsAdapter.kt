@@ -1,9 +1,10 @@
-package com.example.miappcurso.adapter
+package com.example.miappcurso.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miappcurso.R
+import com.example.miappcurso.data.models.Films
 
 class FilmsAdapter(
     private val filmsList: List<Films>,

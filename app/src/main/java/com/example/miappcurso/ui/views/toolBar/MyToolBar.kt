@@ -1,4 +1,4 @@
-package com.example.miappcurso.toolBar
+package com.example.miappcurso.ui.views.toolBar
 
 import androidx.appcompat.app.AppCompatActivity
 import com.example.miappcurso.R

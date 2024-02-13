@@ -1,4 +1,4 @@
-package com.example.miappcurso.fragmentsBYN
+package com.example.miappcurso.ui.views.fragmentsBYN
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,16 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.miappcurso.R
 
-class ProfileFragment : Fragment() {
 
+class HelpFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        return inflater.inflate(R.layout.fragment_help, container, false)
     }
-
 
 }
