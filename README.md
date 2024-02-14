@@ -6,6 +6,8 @@ Este proyecto es una aplicación  de gestión de películas que voy a ir desarro
 ### 2. VERSION 1.2
 ### 3. VERSION 1.3
 ### 4. VERSION 1.4
+### 5. VERSION 2.1
+
 
 
 
@@ -252,3 +254,30 @@ Los nuevos archivos creados han sido:
 
     </menu>
     ```
+## 4. VERSION 1.4
+En esta versió, realizaremos la adaptación de vuestro proyecto con mvvm e inyección de dependencias con
+Hilt.
+
+## Dependencias:
+He tenido que añadir las siguientes dependencias:
+
+
+## Estructura del Proyecto:
+Ha habido que reorganizar la estructura del proyecto para poder adaptarla a la arquitectura mvvm. Principalmente lo he divido en 3 carpetas principales:
+1. Data
+2. Domain
+3. Ui
+
+## Archivos XML:
+No se han tenido que crear archivos xml nuevos.
+
+## 5. VERSION 2.1
+Podremos validar el login sólo la primera vez y editar/añadir/eliminar con persistencia Room o Realm. (Crearemos una rama, ya que simularemos una mala decisión de Acceso a datos)
+
+## Dependencias:
+He tenido que añadir las siguientes dependencias:
+
+## Estructura del Proyecto:
+
+
+## Archivos XML:
