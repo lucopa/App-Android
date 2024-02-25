@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.LoginActivity"
+    tools:context=".ui.views.LoginActivity2"
     android:background="#B2DFDB">
 
     <ImageView
@@ -21,24 +21,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00796B"
-        android:ems="15"
-        android:hint="Usuario"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
 
     <EditText
-        android:id="@+id/editTextCorreo"
+        android:id="@+id/emailRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00796B"
@@ -51,10 +36,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="0.374" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/contrasenaRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
@@ -89,13 +74,13 @@
 
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonAtras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
-        android:text="Login"
+        android:text="Atrás"
         android:textColor="@color/white"
         android:backgroundTint="@color/azulResalta"
         app:cornerRadius="10dp"
@@ -107,65 +92,7 @@
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
-    <CheckBox
-        android:id="@+id/checkBoxVip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Acepto los términos y condiciones"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
 
-    <ImageButton
-        android:id="@+id/imageButtonFacebook"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Imagen Facebook"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageButton
-        android:id="@+id/imageButtonGoogle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Imagen Perfil"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/google" />
-
-    <ImageButton
-        android:id="@+id/imageButtonInsta"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Imagen Instagram"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"
-        app:srcCompat="@drawable/instagram" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

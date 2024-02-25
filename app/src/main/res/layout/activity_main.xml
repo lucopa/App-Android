@@ -22,19 +22,8 @@
             android:layout_height="match_parent"
             android:layout_below="@id/toolbarPeliculas"
             android:layout_above="@+id/bottomAppBar"
-            tools:ignore="NotSibling" >
+            tools:ignore="NotSibling" />
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="215dp"
-                android:text="¡Bienvenido Luis!"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </FrameLayout>
 
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -6,25 +6,36 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.miappcurso.R
+import com.example.miappcurso.databinding.ActivityLoginBinding
 import com.example.miappcurso.domain.SharedPreferences.UserTermsAplication.Companion.prefs
 import com.example.miappcurso.databinding.ActivityMainBinding
 import com.example.miappcurso.databinding.NavHeaderBinding
+import com.example.miappcurso.domain.SharedPreferences.Preferencias
 import com.example.miappcurso.ui.views.fragmentsBYN.HelpFragment
 import com.example.miappcurso.ui.views.fragmentsBYN.ProfileFragment
 import com.example.miappcurso.ui.views.toolBar.MyToolBar
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var fragmentManager: FragmentManager
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindingnav: NavHeaderBinding
+    private lateinit var  preferencias: Preferencias
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +44,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(binding.root)
 
         initUI()
+
+
 
 
 
@@ -86,7 +99,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
+
+        val analytics = FirebaseAnalytics.getInstance(this)
+        val bundle = Bundle()
+        bundle.putString("message", "Integracion de Firebase completa")
+        analytics.logEvent("InitScreen", bundle)
     }
+
 
     fun initUI(){
 
@@ -147,7 +166,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
 
-
         }
         return super.onOptionsItemSelected(item)
     }
@@ -188,3 +206,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 }
+

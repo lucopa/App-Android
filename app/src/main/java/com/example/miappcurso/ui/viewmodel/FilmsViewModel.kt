@@ -1,9 +1,11 @@
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.example.miappcurso.domain.usercase.GetFilmsUseCase
 import kotlinx.coroutines.Dispatchers
 
 class FilmsViewModel(private val filmsRepository: FilmsRepository) : ViewModel() {
 
+    lateinit var useCaseList : GetFilmsUseCase
 
     val filmsList = liveData(Dispatchers.IO) {
         val films = filmsRepository.getFilms()

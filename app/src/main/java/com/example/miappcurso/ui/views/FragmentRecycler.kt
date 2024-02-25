@@ -15,6 +15,7 @@ import com.example.miappcurso.data.models.Films
 import com.example.miappcurso.ui.adapter.FilmsProvider
 import com.example.miappcurso.ui.adapter.FilmsAdapter
 
+
 class FragmentRecycler : Fragment() {
 
     private lateinit var binding: FragmentRecyclerBinding

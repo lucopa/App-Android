@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.miappcurso.R
+import com.example.miappcurso.databinding.ActivityLoginBinding
+
+
+
 
 class ProfileFragment : Fragment() {
+
 
 
     override fun onCreateView(
@@ -16,7 +21,10 @@ class ProfileFragment : Fragment() {
     ): View? {
 
         return inflater.inflate(R.layout.fragment_profile, container, false)
+
     }
+
+
 
 
 }

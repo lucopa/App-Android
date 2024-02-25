@@ -21,7 +21,7 @@ class Prefs(val context: Context) {
     }
 
     fun getName():String{
-       return storage.getString(SHARED_USERNAME, "")!!
+        return storage.getString(SHARED_USERNAME, "")!!
     }
 
     fun getTERMS():Boolean{

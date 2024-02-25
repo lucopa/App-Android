@@ -1,6 +1,5 @@
 package com.example.miappcurso.data.models
 
-import com.example.miappcurso.data.datasource.Film
 
 interface FilmsRepositoryInterfaceDao {
     suspend fun getFilms(): List<List<String>>
