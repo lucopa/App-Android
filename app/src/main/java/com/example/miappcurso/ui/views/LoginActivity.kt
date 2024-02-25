@@ -10,14 +10,14 @@ import com.example.miappcurso.R
 import com.example.miappcurso.data.login.data.DatabaseUsuarioEntity
 import com.example.miappcurso.data.login.data.UsuarioEntityDao
 import com.example.miappcurso.databinding.ActivityLoginBinding
-import com.example.miappcurso.domain.SharedPreferences.Preferencias
+import com.example.miappcurso.domain.SharedPreferences.SharedPreferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var preferencias: Preferencias
+    private lateinit var preferencias: SharedPreferences
     lateinit var dao : UsuarioEntityDao
     lateinit var database : DatabaseUsuarioEntity
     private lateinit var binding: ActivityLoginBinding
@@ -28,11 +28,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         database = DatabaseUsuarioEntity.getDatabase(applicationContext);
         dao = database.usuarioEntityDao()
-        preferencias = Preferencias(this)
+        preferencias = SharedPreferences(this)
 
 
 
-        if(preferencias.logueado() == true){
+        if(preferencias.logIn() == true){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 val comprobarUser = dao.getUsuarioByEmailAndPassword(valorEmail, valorPass)
                 if(comprobarUser!=null){
-                    preferencias.guardarUsuario(valorEmail);
+                    preferencias.saveUser(valorEmail);
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()

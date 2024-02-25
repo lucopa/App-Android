@@ -14,12 +14,11 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.miappcurso.R
 import com.example.miappcurso.databinding.ActivityMainBinding
 import com.example.miappcurso.databinding.NavHeaderBinding
-import com.example.miappcurso.domain.SharedPreferences.Preferencias
+import com.example.miappcurso.domain.SharedPreferences.SharedPreferences
 import com.example.miappcurso.ui.views.fragmentsBYN.HelpFragment
 import com.example.miappcurso.ui.views.fragmentsBYN.ProfileFragment
 import com.example.miappcurso.ui.views.toolBar.MyToolBar
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.analytics.FirebaseAnalytics
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var fragmentManager: FragmentManager
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindingnav: NavHeaderBinding
-    private lateinit var  preferencias: Preferencias
+    private lateinit var  preferencias: SharedPreferences
 
 
 
@@ -36,8 +35,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        preferencias = Preferencias(this)
-        val emailRegistrado = preferencias.obtenerUsuario();
+        preferencias = SharedPreferences(this)
+        val emailRegistrado = preferencias.getUser();
         bindingnav = NavHeaderBinding.bind(binding.navigationDrawer.getHeaderView(0))
         bindingnav.idCorreo.text = "Correo: $emailRegistrado"
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         binding.btnCerrarSesion.setOnClickListener{
-            preferencias.borrarPreferencias()
+            preferencias.deletePreferences()
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             Toast.makeText(this, "Has cerrado sesión", Toast.LENGTH_SHORT).show()
@@ -171,7 +170,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 openFragment(HelpFragment())
                 Toast.makeText(this, "Ayuda", Toast.LENGTH_SHORT).show()}
             R.id.nav_logout -> {
-                preferencias.borrarPreferencias()
+                preferencias.deletePreferences()
                 val intent = Intent(this@MainActivity, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 Toast.makeText(this, "Has cerrado sesión", Toast.LENGTH_SHORT).show()
