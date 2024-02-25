@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.example.miappcurso.R
 import com.example.miappcurso.data.login.data.DatabaseUsuarioEntity
@@ -19,41 +20,41 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LoginActivity2 : AppCompatActivity() {
-    lateinit var dao : UsuarioEntityDao
-    lateinit var database : DatabaseUsuarioEntity
+    lateinit var userDao : UsuarioEntityDao
+    lateinit var userDatabase : DatabaseUsuarioEntity
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login2)
 
-        val BotonRegistrarse = findViewById<Button>(R.id.buttonRegistrar)
-        val BotonVolver = findViewById<Button>(R.id.buttonAtras)
-        database = DatabaseUsuarioEntity.getDatabase(applicationContext);
-        dao = database.usuarioEntityDao()
+        val ButtonRegister = findViewById<Button>(R.id.buttonRegistrar)
+        val ButtonBack = findViewById<ImageButton>(R.id.buttonAtras)
+        userDatabase = DatabaseUsuarioEntity.getDatabase(applicationContext);
+        userDao = userDatabase.usuarioEntityDao()
 
-        BotonVolver.setOnClickListener{
+        ButtonBack.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
 
-        BotonRegistrarse.setOnClickListener {
-            val editNuevoEmail = findViewById<EditText>(R.id.emailRegistro)
-            val nuevoEmail = editNuevoEmail.text.toString()
+        ButtonRegister.setOnClickListener {
+            val editEmailRegistro = findViewById<EditText>(R.id.emailRegistro)
+            val newEmail = editEmailRegistro.text.toString()
 
-            val editsetNuevaContraseña = findViewById<EditText>(R.id.contrasenaRegistro)
-            val nuevaContraseña = editsetNuevaContraseña.text.toString()
+            val passwordLogin = findViewById<EditText>(R.id.contrasenaRegistro)
+            val newPassword = passwordLogin.text.toString()
 
-            val nuevoUsuario = UsuarioEntity (email = nuevoEmail, contrasena = nuevaContraseña)
+            val nuevoUsuario = UsuarioEntity (email = newEmail, contrasena = newPassword)
 
             GlobalScope.launch {
-                val existingUser = dao.getUsuarioByEmail(nuevoEmail)
+                val existingUser = userDao.getUsuarioByEmail(newEmail)
                 if (existingUser == null) {
-                    dao.insertarUsuario(nuevoUsuario)
+                    userDao.insertarUsuario(nuevoUsuario)
                     withContext(Dispatchers.Main) {
                         Toast.makeText(this@LoginActivity2, "Te has registrado correctamente", Toast.LENGTH_LONG).show()
-                        delay(2000)
-                        finish() // Cierra la actividad actual
+                        delay(1000)
+                        finish()
                     }
                 } else {
                     withContext(Dispatchers.Main) {

@@ -37,13 +37,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         preferencias = Preferencias(this)
-        val emailGuardado = preferencias.obtenerUsuario();
-        Toast.makeText(this, "Logueado como: $emailGuardado", Toast.LENGTH_SHORT).show()
+        val emailRegistrado = preferencias.obtenerUsuario();
+        bindingnav = NavHeaderBinding.bind(binding.navigationDrawer.getHeaderView(0))
+        bindingnav.idCorreo.text = "Correo: $emailRegistrado"
 
 
 
 
+        binding.btnCerrarSesion.setOnClickListener{
+            preferencias.borrarPreferencias()
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            Toast.makeText(this, "Has cerrado sesión", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+            true
 
+        }
 
 
 
@@ -97,11 +106,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
-        val analytics = FirebaseAnalytics.getInstance(this)
-        val bundle = Bundle()
-        bundle.putString("message", "Integracion de Firebase completa")
-        analytics.logEvent("InitScreen", bundle)
     }
 
 
@@ -170,6 +174,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 preferencias.borrarPreferencias()
                 val intent = Intent(this@MainActivity, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                Toast.makeText(this, "Has cerrado sesión", Toast.LENGTH_SHORT).show()
                 startActivity(intent)
                 true
             }
