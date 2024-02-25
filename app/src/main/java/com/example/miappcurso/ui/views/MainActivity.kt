@@ -6,15 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.miappcurso.R
-import com.example.miappcurso.databinding.ActivityLoginBinding
-import com.example.miappcurso.domain.SharedPreferences.UserTermsAplication.Companion.prefs
 import com.example.miappcurso.databinding.ActivityMainBinding
 import com.example.miappcurso.databinding.NavHeaderBinding
 import com.example.miappcurso.domain.SharedPreferences.Preferencias
@@ -23,9 +20,6 @@ import com.example.miappcurso.ui.views.fragmentsBYN.ProfileFragment
 import com.example.miappcurso.ui.views.toolBar.MyToolBar
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.auth.FirebaseAuth
-import dagger.hilt.android.AndroidEntryPoint
-
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -42,8 +36,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        preferencias = Preferencias(this)
+        val emailGuardado = preferencias.obtenerUsuario();
+        Toast.makeText(this, "Logueado como: $emailGuardado", Toast.LENGTH_SHORT).show()
 
-        initUI()
+
+
 
 
 
@@ -107,23 +105,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    fun initUI(){
-
-        bindingnav = NavHeaderBinding.bind(binding.navigationDrawer.getHeaderView(0))
-
-        binding.btnCerrarSesion.setOnClickListener{
-            prefs.restaurar()
-            onBackPressed()
-            Toast.makeText(this, "Vas a Cerrar Sesión", Toast.LENGTH_SHORT).show()
-
-        }
-
-        val username = prefs.getName()
-        val correo = prefs.getCorreo()
-        bindingnav.idusuario.text = "! Bienvenido $username ¡"
-        bindingnav.idCorreo.text = "Correo: $correo"
-    }
-
 
 
 
@@ -185,6 +166,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_help ->{
                 openFragment(HelpFragment())
                 Toast.makeText(this, "Ayuda", Toast.LENGTH_SHORT).show()}
+            R.id.nav_logout -> {
+                preferencias.borrarPreferencias()
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                true
+            }
+
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
