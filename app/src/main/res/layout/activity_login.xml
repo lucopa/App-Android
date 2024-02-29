@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.LoginActivity"
+    tools:context=".activity.Login"
     android:background="#B2DFDB">
 
     <ImageView
-        android:id="@+id/button"
+        android:id="@+id/imagenLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="@drawable/perfil"
@@ -23,7 +23,7 @@
 
 
     <EditText
-        android:id="@+id/editTextCorreo"
+        android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00796B"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00796B"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/buttonRegistrar"
+        android:id="@+id/btn_registro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -71,28 +71,26 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="80dp"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/azulResalta"
+        android:backgroundTint="#267b77"
         app:cornerRadius="10dp"
-        app:layout_constraintVertical_bias="0.730"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="80dp"
+        android:onClick="iniciarLogin"
+        android:text="Entrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
     <ImageButton
         android:id="@+id/imageButtonFacebook"
@@ -106,8 +104,9 @@
         app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866"
+        app:layout_constraintVertical_bias="0.899"
         app:srcCompat="@drawable/facebook" />
+
 
     <ImageButton
         android:id="@+id/imageButtonGoogle"
@@ -121,7 +120,7 @@
         app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866"
+        app:layout_constraintVertical_bias="0.899"
         app:srcCompat="@drawable/google" />
 
     <ImageButton
@@ -136,7 +135,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866"
+        app:layout_constraintVertical_bias="0.899"
         app:srcCompat="@drawable/instagram" />
 
 

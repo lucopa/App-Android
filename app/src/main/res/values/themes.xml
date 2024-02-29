@@ -8,6 +8,14 @@
 
     </style>
 
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Color de fondo del diálogo -->
+        <item name="android:windowBackground">@color/azulResalta</item>
+        <!-- Color del texto del título -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="colorControlNormal">@color/white</item>
         <item name="titleTextColor">@color/white</item>
