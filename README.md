@@ -1,5 +1,5 @@
 # APLICACIÓN MÓVIL PELÍCULAS
-Este proyecto es una aplicación  de gestión de películas que voy a ir desarrollando con diferentes versiones a lo largo del curso en el módulo de Android.
+Aplicación  de gestión de películas que voy a ir desarrollando con diferentes versiones aplicando todo el temario
 
 ## ÍNDICE
 ### 1. VERSIÓN 1.1
